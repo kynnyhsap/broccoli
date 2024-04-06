@@ -6,6 +6,10 @@ import parse from "csv-simple-parser";
 import { db } from ".";
 import { Episodes, Notes, Podcasts } from "./schema";
 
+// await db.delete(Notes);
+// await db.delete(Episodes);
+// await db.delete(Podcasts);
+
 async function csv(filepath: string): Promise<any[]> {
   const result = await Bun.file(filepath).text();
   return parse(result, { header: true });

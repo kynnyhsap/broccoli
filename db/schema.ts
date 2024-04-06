@@ -39,7 +39,7 @@ export type SelectEpisode = typeof Episodes.$inferSelect;
 export const Notes = sqliteTable("notes", {
   ...common,
 
-  text: text("title").notNull(),
+  text: text("text").notNull(),
 
   episodeId: text("episode_id").references(() => Episodes.id),
 });
