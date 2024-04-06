@@ -37,20 +37,23 @@ export default async function HomePage() {
           podcastTitle,
           image,
         }) => (
-          <div key={id} className="my-16">
-            <Link href={`/episode/${episodeId}`} className="opacity-50">
-              <div className="flex items-center gap-4">
-                <Avatar className="rounded">
-                  <AvatarImage src={image ?? ""} />
-                  <AvatarFallback className="rounded">
-                    {podcastTitle?.[0] ?? ""}
-                  </AvatarFallback>
-                </Avatar>
+          <div key={id} className="my-16 flex flex-col gap-4">
+            <Link
+              href={`/podcast/${podcastId}`}
+              className="flex items-center gap-4 opacity-30"
+            >
+              <Avatar className="rounded">
+                <AvatarImage src={image ?? ""} />
+                <AvatarFallback className="rounded">
+                  {podcastTitle?.[0] ?? ""}
+                </AvatarFallback>
+              </Avatar>
 
-                <span className="text-sm text-purple-300">{podcastTitle}</span>
-              </div>
+              <span className="text-sm text-purple-200">{podcastTitle}</span>
+            </Link>
 
-              <div className="my-2 text-sm text-orange-300">{episodeTitle}</div>
+            <Link href={`/episode/${episodeId}`} className="opacity-30">
+              <div className="text-sm">{episodeTitle}</div>
             </Link>
 
             <div>
