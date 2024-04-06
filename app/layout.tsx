@@ -3,9 +3,7 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-// const inter = Inter({ subsets: ["latin"] });
-
-export const roboto_mono = Roboto_Mono({
+const roboto_mono = Roboto_Mono({
   subsets: ["latin"],
   display: "swap",
 });
