@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const roboto_mono = Roboto_Mono({
   subsets: ["latin"],
@@ -29,6 +30,8 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+
+        <Toaster />
       </body>
     </html>
   );

@@ -1,7 +1,9 @@
+import { CopyableText } from "./copyable-text";
+
 export function NoteText({ text }: { text: string }) {
   return (
     <div>
-      <span>{text}</span>
+      <CopyableText>{text}</CopyableText>
     </div>
   );
 }
