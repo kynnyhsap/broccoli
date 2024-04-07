@@ -61,7 +61,7 @@ export async function NotesList() {
 export function NotesListSkeleton() {
   return (
     <div className="max-w-[480px] mx-auto px-8">
-      {Array(1)
+      {Array(3)
         .fill(0)
         .map((_, i) => (
           <div key={i} className="my-16 flex flex-col gap-4">
