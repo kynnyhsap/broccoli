@@ -42,11 +42,11 @@ export async function NotesList() {
           image,
         }) => (
           <div key={id} className="my-16 flex flex-col gap-4">
-            <Link href={`/podcast/${podcastId}`}>
+            <Link href={`/podcast/${podcastId}`} className="opacity-40">
               <PodcastTitle title={podcastTitle} image={image} />
             </Link>
 
-            <Link href={`/episode/${episodeId}`}>
+            <Link href={`/episode/${episodeId}`} className="opacity-40">
               <EpisodeTitle title={truncate(episodeTitle, 35)} />
             </Link>
 
