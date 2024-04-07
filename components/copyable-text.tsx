@@ -10,6 +10,7 @@ export function CopyableText({ children }: { children: string }) {
 
     toast({
       title: "Copied to clipboard ✅",
+      duration: 1000,
     });
   }
 
