@@ -9,7 +9,7 @@ const roboto_mono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Broccoli 🥦",
+  title: "broccoli 🥦",
   description: "My personal notes.",
 };
 
