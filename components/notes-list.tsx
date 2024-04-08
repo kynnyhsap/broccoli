@@ -7,7 +7,9 @@ import { NoteText, NoteTextSkeleton } from "./note-text";
 import { EpisodeTitle, EpisodeTitleSkeleton } from "./episode-title";
 import { truncate } from "@/lib/truncate";
 
-export async function NotesList() {
+const LIMIT = 50;
+
+export async function NotesList({ page }: { page: number }) {
   const notes = await db
     .select({
       id: Notes.id,
@@ -23,6 +25,8 @@ export async function NotesList() {
     .innerJoin(Episodes, eq(Notes.episodeId, Episodes.id))
     .innerJoin(Podcasts, eq(Episodes.podcastId, Podcasts.id))
     .orderBy(desc(Notes.createdAt))
+    .limit(LIMIT)
+    .offset(LIMIT * page)
     .all();
 
   return (
