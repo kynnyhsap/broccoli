@@ -7,9 +7,7 @@ import { NoteText, NoteTextSkeleton } from "./note-text";
 import { EpisodeTitle, EpisodeTitleSkeleton } from "./episode-title";
 import { truncate } from "@/lib/truncate";
 
-const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
-export async function NotesList() {
+export async function NotesList({ page }: { page: number }) {
   const notes = await db
     .select({
       id: Notes.id,
@@ -26,8 +24,6 @@ export async function NotesList() {
     .innerJoin(Podcasts, eq(Episodes.podcastId, Podcasts.id))
     .orderBy(desc(Notes.createdAt))
     .all();
-
-  await wait(200);
 
   return (
     <div className="max-w-[480px] mx-auto px-8">
