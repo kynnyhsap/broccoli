@@ -7,7 +7,7 @@ import { NoteText, NoteTextSkeleton } from "./note-text";
 import { EpisodeTitle, EpisodeTitleSkeleton } from "./episode-title";
 import { truncate } from "@/lib/truncate";
 
-export async function NotesList({ page }: { page: number }) {
+export async function NotesList() {
   const notes = await db
     .select({
       id: Notes.id,
