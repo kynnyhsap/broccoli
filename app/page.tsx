@@ -3,6 +3,7 @@ import { NotesList, NotesListSkeleton } from "@/components/notes-list";
 import { Suspense } from "react";
 
 export const runtime = "edge";
+export const preferredRegion = ["arn1"];
 
 export default async function HomePage({
   searchParams,

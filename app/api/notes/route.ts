@@ -4,6 +4,7 @@ import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 export const runtime = "edge";
+export const preferredRegion = ["arn1"];
 
 export async function POST(req: Request) {
   const body = await req.json();
