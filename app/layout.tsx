@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "broccoli",
   description: "My personal notes.",
 
-  manifest: "/manifest.json",
+  // manifest: "/manifest.json",
 
   icons: {
     icon: "/favicon.ico",
