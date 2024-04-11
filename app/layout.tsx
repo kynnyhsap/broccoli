@@ -14,6 +14,13 @@ const roboto_mono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "broccoli",
   description: "My personal notes.",
+
+  manifest: "/manifest.json",
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
