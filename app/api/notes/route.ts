@@ -25,6 +25,8 @@ export async function POST(req: Request) {
     return new Response("Missing podcast title", { status: 400 });
   }
 
+  console.time("db operations");
+
   let [podcast] = await db
     .select()
     .from(Podcasts)
@@ -66,7 +68,11 @@ export async function POST(req: Request) {
     })
     .returning();
 
+  console.timeEnd("db operations");
+
+  console.time("revalidate");
   revalidatePath("/");
+  console.timeEnd("revalidate");
 
   return Response.json(note);
 }
