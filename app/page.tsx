@@ -2,10 +2,8 @@ import { LoadMoreButton } from "@/components/load-more-button";
 import { NotesList, NotesListSkeleton } from "@/components/notes-list";
 import { Suspense } from "react";
 
-export const runtime = "edge";
-export const preferredRegion = ["arn1"];
-
-// export const revalidate = 10;
+// export const runtime = "edge";
+// export const preferredRegion = ["arn1"];
 
 export default async function HomePage({
   searchParams,

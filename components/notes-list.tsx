@@ -10,6 +10,8 @@ import { truncate } from "@/lib/truncate";
 const LIMIT = 50;
 
 export async function NotesList({ page }: { page: number }) {
+  console.time("getting notes, page " + page);
+
   const notes = await db
     .select({
       id: Notes.id,
@@ -28,6 +30,8 @@ export async function NotesList({ page }: { page: number }) {
     .limit(LIMIT)
     .offset(LIMIT * page)
     .all();
+
+  console.timeEnd("getting notes, page " + page);
 
   return (
     <div className="max-w-[480px] mx-auto px-8">
