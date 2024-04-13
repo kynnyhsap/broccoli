@@ -5,6 +5,8 @@ import { Suspense } from "react";
 export const runtime = "edge";
 export const preferredRegion = ["arn1"];
 
+// export const revalidate = 10;
+
 export default async function HomePage({
   searchParams,
 }: {
