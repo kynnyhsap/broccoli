@@ -5,6 +5,8 @@ import { Suspense } from "react";
 // export const runtime = "edge";
 // export const preferredRegion = ["arn1"];
 
+export const dynamic = "force-dynamic"; // no caching
+
 export default async function HomePage({
   searchParams,
 }: {
@@ -12,7 +14,7 @@ export default async function HomePage({
 }) {
   const pages = Array.from(
     { length: Number(searchParams.page ?? "1") },
-    (_, i) => i
+    (_, i) => i,
   );
 
   return (
