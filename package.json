@@ -6,12 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "db:generate": "drizzle-kit generate:sqlite",
+    "db:generate": "drizzle-kit generate:pg",
     "db:studio": "drizzle-kit studio",
-    "db:push": "drizzle-kit push:sqlite"
+    "db:push": "drizzle-kit push:pg"
   },
   "dependencies": {
-    "@libsql/client": "^0.6.0",
+    "@neondatabase/serverless": "^0.9.1",
     "@paralleldrive/cuid2": "^2.2.2",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-slot": "^1.0.2",
@@ -23,6 +23,7 @@
     "lucide-react": "^0.365.0",
     "next": "14.1.4",
     "next-themes": "^0.3.0",
+    "pg": "^8.11.5",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.2.2",
@@ -33,7 +34,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "drizzle-kit": "^0.20.14",
+    "drizzle-kit": "^0.20.16",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",

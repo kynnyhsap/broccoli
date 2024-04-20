@@ -4,10 +4,8 @@ import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 // export const runtime = "edge";
-// export const preferredRegion = ["arn1"];
 
 export async function POST(req: Request) {
-  console.time("request");
   const body = await req.json();
 
   const { text, episodeTitle, podcastTitle } = body as {
@@ -46,7 +44,7 @@ export async function POST(req: Request) {
     .select()
     .from(Episodes)
     .where(
-      and(eq(Episodes.title, episodeTitle), eq(Episodes.podcastId, podcast.id))
+      and(eq(Episodes.title, episodeTitle), eq(Episodes.podcastId, podcast.id)),
     );
 
   if (!episode) {
@@ -72,8 +70,6 @@ export async function POST(req: Request) {
   console.timeEnd("db operations");
 
   revalidatePath("/");
-
-  console.timeEnd("request");
 
   return Response.json(note);
 }

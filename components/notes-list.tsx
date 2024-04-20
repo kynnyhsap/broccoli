@@ -10,7 +10,7 @@ import { truncate } from "@/lib/truncate";
 const LIMIT = 50;
 
 export async function NotesList({ page }: { page: number }) {
-  console.time("getting notes, page " + page);
+  console.time(`getting notes for page ${page}`);
 
   const notes = await db
     .select({
@@ -28,10 +28,9 @@ export async function NotesList({ page }: { page: number }) {
     .innerJoin(Podcasts, eq(Episodes.podcastId, Podcasts.id))
     .orderBy(desc(Notes.createdAt))
     .limit(LIMIT)
-    .offset(LIMIT * page)
-    .all();
+    .offset(LIMIT * page);
 
-  console.timeEnd("getting notes, page " + page);
+  console.timeEnd(`getting notes for page ${page}`);
 
   return (
     <div className="max-w-[480px] mx-auto px-8">
@@ -56,7 +55,7 @@ export async function NotesList({ page }: { page: number }) {
 
             <NoteText text={text} />
           </div>
-        )
+        ),
       )}
     </div>
   );

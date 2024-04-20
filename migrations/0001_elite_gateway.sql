@@ -1,1 +1,0 @@
-ALTER TABLE `notes` RENAME COLUMN `title` TO `text`;

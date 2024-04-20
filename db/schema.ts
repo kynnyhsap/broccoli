@@ -1,18 +1,15 @@
 import { createId } from "@paralleldrive/cuid2";
-import { sql } from "drizzle-orm";
-import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
 const common = {
   id: text("id")
     .primaryKey()
     .$defaultFn(() => createId()),
 
-  createdAt: text("created_at")
-    .default(sql`CURRENT_TIMESTAMP`)
-    .notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 };
 
-export const Podcasts = sqliteTable("podcasts", {
+export const Podcasts = pgTable("podcasts", {
   ...common,
 
   title: text("title").notNull(),
@@ -23,7 +20,7 @@ export const Podcasts = sqliteTable("podcasts", {
 export type InsertPodcast = typeof Podcasts.$inferInsert;
 export type SelectPodcast = typeof Podcasts.$inferSelect;
 
-export const Episodes = sqliteTable("episodes", {
+export const Episodes = pgTable("episodes", {
   ...common,
 
   title: text("title").notNull(),
@@ -36,7 +33,7 @@ export const Episodes = sqliteTable("episodes", {
 export type InsertEpisode = typeof Episodes.$inferInsert;
 export type SelectEpisode = typeof Episodes.$inferSelect;
 
-export const Notes = sqliteTable("notes", {
+export const Notes = pgTable("notes", {
   ...common,
 
   text: text("text").notNull(),
