@@ -2,8 +2,6 @@ import { LoadMoreButton } from "@/components/load-more-button";
 import { NotesList, NotesListSkeleton } from "@/components/notes-list";
 import { Suspense } from "react";
 
-// export const runtime = "edge";
-
 export default async function HomePage({
   searchParams,
 }: {

@@ -7,7 +7,7 @@ import { NoteText, NoteTextSkeleton } from "./note-text";
 import { EpisodeTitle, EpisodeTitleSkeleton } from "./episode-title";
 import { truncate } from "@/lib/truncate";
 
-const LIMIT = 50;
+const LIMIT = 25;
 
 export async function NotesList({ page }: { page: number }) {
   console.time(`getting notes for page ${page}`);
