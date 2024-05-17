@@ -1,6 +1,9 @@
-import { neon } from "@neondatabase/serverless";
-import { drizzle } from "drizzle-orm/neon-http";
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "@libsql/client";
 
-const sql = neon(process.env.NEON_DATABASE_URL!);
+const client = createClient({
+  url: process.env.TURSO_CONNECTION_URL!,
+  authToken: process.env.TURSO_AUTH_TOKEN!,
+});
 
-export const db = drizzle(sql);
+export const db = drizzle(client);

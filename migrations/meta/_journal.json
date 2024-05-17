@@ -1,12 +1,12 @@
 {
   "version": "5",
-  "dialect": "pg",
+  "dialect": "sqlite",
   "entries": [
     {
       "idx": 0,
       "version": "5",
-      "when": 1713609596329,
-      "tag": "0000_futuristic_photon",
+      "when": 1715948855020,
+      "tag": "0000_round_chameleon",
       "breakpoints": true
     }
   ]
