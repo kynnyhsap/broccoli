@@ -1,7 +1,7 @@
 {
-  "version": "5",
+  "version": "6",
   "dialect": "sqlite",
-  "id": "3443e40a-e162-40e9-bc42-6251839ae3bd",
+  "id": "77137691-3f11-4473-9ab7-0387fcdc494a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "episodes": {

@@ -12,10 +12,8 @@ const roboto_mono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "broccoli",
-  description: "My personal notes.",
-
-  // manifest: "/manifest.json",
+  title: "podnotes",
+  description: "My podcast notes.",
 
   icons: {
     icon: "/favicon.ico",

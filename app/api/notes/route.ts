@@ -1,7 +1,6 @@
-import { db } from "@/db";
+import { client, db } from "@/db";
 import { Episodes, Notes, Podcasts } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
-import { revalidatePath } from "next/cache";
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -67,7 +66,7 @@ export async function POST(req: Request) {
 
   console.timeEnd("db operations");
 
-  revalidatePath("/");
+  await client.sync();
 
   return Response.json(note);
 }
