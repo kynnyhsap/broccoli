@@ -1,3 +1,3 @@
-# Brocolli
+# podnotes
 
-My personal notes
+notes from podcasts i listen to
