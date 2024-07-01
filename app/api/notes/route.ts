@@ -66,7 +66,9 @@ export async function POST(req: Request) {
 
   console.timeEnd("db operations");
 
+  console.time("sync");
   await client.sync();
+  console.timeEnd("sync");
 
   return Response.json(note);
 }
